@@ -12,6 +12,65 @@
             Looking for a new book to read? Look no farther.
         </p>
         
+        <form action="/search" method="POST">
+            <div class="parameter-box">
+                <button class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+                    Search Options
+                </button>
+                <ul class="search-parameters">
+                    <li class="dropdown-item search-parameter">
+                        <input class="search-option" name="general" type="radio" aria-label="General Search Option" />
+                        <label for="general">General</label>
+                    </li>
+                    <li class="dropdown-item search-parameter">
+                        <input class="search-optuon" name="title" type="radio" aria-label="Title Search Option" />
+                        <label for="title">Title</label>
+                    </li>
+                    <li class="dropdown-item search-parameter">
+                        <input class="search-option" name="author" type="radio" aria-label="Author Search Option" />
+                        <label for="author">Author</label>
+                    </li>
+                    <li class="dropdown-item search-parameter">
+                        <input class="search-option" name="subject" type="radio" aria-label="Subject Search Option" />
+                        <label for="subject">Genre</label>
+                    </li>
+                    <li class="dropdown-item search-parameter">
+                        <input class="search-option" name="place" type="radio" aria-label="Place Search Option" />
+                        <label for="place">Place</label>
+                    </li>
+                    <li class="dropdown-item search-parameter">
+                        <input class="search-option" name="person" type="radio" aria-label="Person Search Option" />
+                        <label for="person">Person</label>
+                    </li>
+                    <li class="dropdown-item search-parameter">
+                        <input class="search-option" name="language" type="radio" aria-label="Language Search Option" />
+                        <label for="language">Language</label>
+                    </li>
+                </ul>
+            </div>
+            <input class="text-input" name="search-query" type="text" aria-label="Type Search" />
+            <button class="submit-btn" type="submit">Search</button>
+        </form>
+        <ul class="book-info">
+            <li class="info">
+                Title: Around the World in Eighty Days
+            </li>
+            <li class="info">
+                Author: Jules Verne
+            </li>
+            <li class="info">
+                Genre: Adventure
+            </li>
+            <li class="info">
+                Place: England
+            </li>
+            <li class="info">
+                Person: Phileas Fogg
+            </li>
+            <li class="info">
+                Language: English
+            </li>
+        </ul>
     </section>
 </body>
 </html>
