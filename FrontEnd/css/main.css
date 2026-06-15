@@ -19,6 +19,15 @@ h1 {
     margin-bottom: 4rem;
 }
 
+.body p {
+    color: #3a1f13;
+    font-size: 1.5rem;
+}
+
+.space {
+    margin: 7rem;
+}
+
 /* FORM */
 
 
@@ -96,6 +105,7 @@ h1 {
     margin: 0;
     margin-right: 0.5rem;
     cursor: pointer;
+    accent-color: #0f4c43;
 }
 
 .search-parameter label {
@@ -138,5 +148,52 @@ h1 {
 
 
 .book-card {
-    margin-top: 4rem;
+    margin: 3.4rem auto;
+    padding: 1rem;
+    border-radius: 0.375rem;
+    background-color: #0f4c43;
+    color: #faf8f5;
+    width: 25rem;
+}
+
+img {
+    margin-bottom: 1rem;
+    border: 0.4rem solid #f1ba05;
+    border-radius: 0.375rem;
+    height: 20rem;
+    width: auto;
+}
+
+.info {
+    margin-bottom: 1rem;
+    font-size: 0.978rem;
+}
+
+
+/* FOOTER */
+
+
+.footer .flex-container {
+    background-color: #3a1f13;
+    color: #faf8f5;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem 0;
+    width: 100%;
+}
+
+.footer .brand,
+.footer .copyright {
+    flex: 1;
+}
+
+.copyright {
+  text-align: left;
+  padding-left: 15px;
+}
+
+.footer .brand {
+  text-align: right;
+  padding-right: 15px;
 }
