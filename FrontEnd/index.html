@@ -1,95 +1,144 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>BookWorm</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/main.css" />
-</head>
-<body>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lora:ital,wght@0,400..700;1,400..700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/darkmode.css" />
+  </head>
+  <body>
     <section class="body">
-        <div class="intro">
-            <h1>BookWorm</h1>
-            <p>
-                Looking for a new book to read? Look no farther.
-            </p>
+      <div class="intro">
+        <h1>BookWorm</h1>
+        <p>Looking for a new book to read? Look no farther.</p>
+      </div>
+
+      <form action="/search" method="POST">
+        <div class="parameter-box">
+          <button
+            class="dropdown-toggle"
+            type="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >
+            Search Options
+          </button>
+          <ul class="search-parameters">
+            <li class="dropdown-item search-parameter">
+              <input
+                class="search-option"
+                id="general"
+                name="search-type"
+                value="general"
+                type="radio"
+                aria-label="General Search Option"
+              />
+              <label for="general">General</label>
+            </li>
+            <li class="dropdown-item search-parameter">
+              <input
+                class="search-optuon"
+                id="title"
+                name="search-type"
+                value="title"
+                type="radio"
+                aria-label="Title Search Option"
+              />
+              <label for="title">Title</label>
+            </li>
+            <li class="dropdown-item search-parameter">
+              <input
+                class="search-option"
+                id="author"
+                name="search-type"
+                value="author"
+                type="radio"
+                aria-label="Author Search Option"
+              />
+              <label for="author">Author</label>
+            </li>
+            <li class="dropdown-item search-parameter">
+              <input
+                class="search-option"
+                id="subject"
+                name="search-type"
+                value="subject"
+                type="radio"
+                aria-label="Subject Search Option"
+              />
+              <label for="subject">Genre</label>
+            </li>
+            <li class="dropdown-item search-parameter">
+              <input
+                class="search-option"
+                id="place"
+                name="place"
+                type="radio"
+                aria-label="Place Search Option"
+              />
+              <label for="place">Place</label>
+            </li>
+            <li class="dropdown-item search-parameter">
+              <input
+                class="search-option"
+                id="person"
+                name="search-type"
+                value="person"
+                type="radio"
+                aria-label="Person Search Option"
+              />
+              <label for="person">Person</label>
+            </li>
+            <li class="dropdown-item search-parameter">
+              <input
+                class="search-option"
+                id="language"
+                name="search-type"
+                value="language"
+                type="radio"
+                aria-label="Language Search Option"
+              />
+              <label for="language">Language</label>
+            </li>
+          </ul>
         </div>
-        
-        
-        <form action="/search" method="POST">
-            <div class="parameter-box">
-                <button class="dropdown-toggle" type="button" aria-haspopup="true" aria-expanded="false">
-                    Search Options
-                </button>
-                <ul class="search-parameters">
-                    <li class="dropdown-item search-parameter">
-                        <input class="search-option" id="general" name="search-type" value="general" type="radio" aria-label="General Search Option" />
-                        <label for="general">General</label>
-                    </li>
-                    <li class="dropdown-item search-parameter">
-                        <input class="search-optuon" id="title" name="search-type" value="title" type="radio" aria-label="Title Search Option" />
-                        <label for="title">Title</label>
-                    </li>
-                    <li class="dropdown-item search-parameter">
-                        <input class="search-option" id="author" name="search-type" value="author" type="radio" aria-label="Author Search Option" />
-                        <label for="author">Author</label>
-                    </li>
-                    <li class="dropdown-item search-parameter">
-                        <input class="search-option" id="subject" name="search-type" value="subject" type="radio" aria-label="Subject Search Option" />
-                        <label for="subject">Genre</label>
-                    </li>
-                    <li class="dropdown-item search-parameter">
-                        <input class="search-option" id="place" name="place" type="radio" aria-label="Place Search Option" />
-                        <label for="place">Place</label>
-                    </li>
-                    <li class="dropdown-item search-parameter">
-                        <input class="search-option" id="person" name="search-type" value="person" type="radio" aria-label="Person Search Option" />
-                        <label for="person">Person</label>
-                    </li>
-                    <li class="dropdown-item search-parameter">
-                        <input class="search-option" id="language" name="search-type" value="language" type="radio" aria-label="Language Search Option" />
-                        <label for="language">Language</label>
-                    </li>
-                </ul>
-            </div>
-            <input class="text-input" name="search-query" type="text" aria-label="Type Search" />
-            <button class="submit-btn" type="submit">Search</button>
-        </form>
-        <div class="space"></div>
-        <div class="book-card">
-            <ul class="book-info">
-                <li class="info">
-                    <img src="img/Around the World in 80 Days by Jules Verne.jpeg" alt="Around the World in 80 Days by Jules Verne" />
-                </li>
-            <li class="info">
-                Title: Around the World in 80 Days
-            </li>
-            <li class="info">
-                Author: Jules Verne
-            </li>
-            <li class="info">
-                Genre: Adventure
-            </li>
-            <li class="info">
-                Place: England
-            </li>
-            <li class="info">
-                Person: Phileas Fogg
-            </li>
-            <li class="info">
-                Language: English
-            </li>
+        <input
+          class="text-input"
+          name="search-query"
+          type="text"
+          aria-label="Type Search"
+        />
+        <button class="submit-btn" type="submit">Search</button>
+      </form>
+      <div class="space"></div>
+      <div class="book-card">
+        <ul class="book-info">
+          <li class="info">
+            <img
+              src="img/Around the World in 80 Days by Jules Verne.jpeg"
+              alt="Around the World in 80 Days by Jules Verne"
+            />
+          </li>
+          <li class="info">Title: Around the World in 80 Days</li>
+          <li class="info">Author: Jules Verne</li>
+          <li class="info">Genre: Adventure</li>
+          <li class="info">Place: England</li>
+          <li class="info">Person: Phileas Fogg</li>
+          <li class="info">Language: English</li>
         </ul>
-        </div>
+      </div>
     </section>
 
     <div class="space"></div>
 
     <section class="footer">
-        <div class="container">
+      <div class="container">
         <footer class="flex-container">
           <p class="copyright">© 2026</p>
 
@@ -99,5 +148,5 @@
     </section>
 
     <script src="index.js"></script>
-</body>
+  </body>
 </html>
