@@ -1,0 +1,96 @@
+<%- include('partials/header.ejs') %>
+
+<button id="theme-btn" type="button" aria-label="Dark Theme Button">
+  <span class="toggle-ball"></span>
+</button>
+
+<section class="body">
+  <div class="intro">
+    <h1>BookWorm</h1>
+    <p>Looking for a new book to read? Look no farther.</p>
+  </div>
+
+  <form action="/search" method="POST">
+    <div class="parameter-box">
+      <button class="dropdown-toggle" type="button" aria-haspopup="true" aria-expanded="false">
+        Search Options
+      </button>
+      <ul class="search-parameters">
+        <li class="dropdown-item search-parameter">
+          <input class="search-option" id="general" name="search-type" value="general" type="radio" aria-label="General Search Option" />
+          <label for="general">General</label>
+        </li>
+        <li class="dropdown-item search-parameter">
+          <input class="search-optuon" id="title" name="search-type" value="title" type="radio" aria-label="Title Search Option" />
+          <label for="title">Title</label>
+        </li>
+        <li class="dropdown-item search-parameter">
+          <input class="search-option" id="author" name="search-type" value="author" type="radio" aria-label="Author Search Option" />
+          <label for="author">Author</label>
+        </li>
+        <li class="dropdown-item search-parameter">
+          <input class="search-option" id="subject" name="search-type" value="subject" type="radio" aria-label="Subject Search Option" />
+          <label for="subject">Genre</label>
+        </li>
+        <li class="dropdown-item search-parameter">
+          <input class="search-option" id="place" name="place" type="radio" aria-label="Place Search Option" />
+          <label for="place">Place</label>
+        </li>
+      </ul>
+    </div>
+    <input class="text-input" name="search-query" type="text" aria-label="Type Search" />
+    <button class="submit-btn" type="submit">Search</button>
+  </form>
+
+
+  <div class="space"></div>
+
+  <% if (locals.books && books.length > 0) { %>
+  <% books.forEach(book => { %>
+  <div class="book-card">
+    <ul class="book-info">
+      <li class="info">
+        <% if (book.cover_i) { %>
+        <img src="https://covers.openlibrary.org/b/id/<%= book.cover_i %>-M.jpg" alt="<%= book.title %> Cover" />
+        <% } else { %>
+        <div class="custom-book-cover">
+          <h2 class="custom-book-cover-title">
+            <%= book.title %>
+          </h2>
+        </div>
+        <% } %>
+
+      </li>
+      <li class="info">
+        <strong>Title:</strong> <%= book.title %>
+      </li>
+      <li class="info">
+        <strong>Author:</strong> <%= book.author_name ? book.author_name.join(', ') : 'Unknown' %>
+      </li>
+      <li class="info">
+        <strong>Genre:</strong> <%= book.subject ? book.subject.slice(0, 3).join(', ') : 'N/A' %>
+      </li>
+      <li class="info">
+        <strong>Place:</strong> <%= book.place ? book.place.splice(0, 2).join(', ') : 'N/A' %>
+      </li>
+      <li class="info">
+        <strong>Person:</strong> <%= book.person ? book.person.splice(0, 2).join(', ') : 'N/A' %>
+      </li>
+      <li class="info">
+        <strong>Language:</strong> <%= book.language ? book.language.splice(0, 2).join(', ') : 'N/A' %>
+      </li>
+    </ul>
+  </div>
+  <% }); %>
+  <% } else { %>
+  <p class="error-msg">
+    <%= error %>
+  </p>
+  <% } %>
+
+
+</section>
+
+<div class="space"></div>
+
+<%- include('partials/footer.ejs') %>

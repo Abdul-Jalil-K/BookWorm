@@ -74,6 +74,10 @@ h1 {
   background-color: #ffffff;
 }
 
+.body {
+  padding: 5rem;
+}
+
 /* FORM */
 
 .parameter-box {
@@ -199,19 +203,31 @@ h1 {
 
 .book-card {
   margin: 3.4rem auto;
-  padding: 1rem;
+  padding: 2rem;
   border-radius: 0.375rem;
   background-color: #1e1e24;
   color: #e4e4e7;
   width: 25rem;
 }
 
-img {
-  margin-bottom: 1rem;
+img, .custom-book-cover {
+  margin: 1rem auto;
+  padding: 2rem;
   border: 0.4rem solid #e9d8a6;
   border-radius: 0.375rem;
+}
+
+.custom-book-cover {
+  background-color: #e4e4e7;
+  color: #121214;
   height: 20rem;
-  width: auto;
+  width: 20rem;
+}
+
+.custom-book-cover-title {
+  font-family: "Inter", sans-serif;
+  font-size: 3rem;
+  font-weight: 700;
 }
 
 .info {
