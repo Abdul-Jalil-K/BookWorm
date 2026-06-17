@@ -181,6 +181,7 @@ h1 {
 
 .submit-btn {
   font-family: "Inter", sans-serif;
+  font-size: 1rem;
   padding: 0.625rem;
   border-radius: 0.375rem;
   cursor: pointer;
@@ -207,26 +208,28 @@ h1 {
   border-radius: 0.375rem;
   background-color: #1e1e24;
   color: #e4e4e7;
-  width: 25rem;
+  width: 30rem;
 }
 
 img, .custom-book-cover {
+  display: block;
   margin: 1rem auto;
-  padding: 2rem;
   border: 0.4rem solid #e9d8a6;
   border-radius: 0.375rem;
 }
 
 .custom-book-cover {
+  text-align: center;
   background-color: #e4e4e7;
   color: #121214;
-  height: 20rem;
-  width: 20rem;
+  height: 15rem;
+  width: 15rem;
+  padding: 2rem;
 }
 
 .custom-book-cover-title {
   font-family: "Inter", sans-serif;
-  font-size: 3rem;
+  font-size: 2rem;
   font-weight: 700;
 }
 
@@ -253,6 +256,22 @@ img, .custom-book-cover {
 .footer .brand,
 .footer .copyright {
   flex: 1;
+}
+
+.date-container {
+  height: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.date {
+  transition: opacity 0.8s ease-in-out;
+  opacity: 1;
+}
+
+.date.hidden {
+  display: none;
+  opacity: 0;
+  pointer-events: none;
 }
 
 .copyright {

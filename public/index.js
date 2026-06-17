@@ -16,6 +16,18 @@ document.addEventListener('DOMContentLoaded', () => {
       dropdownToggle.setAttribute('aria-expanded', 'false');
     }
   });
+
+  const containers = document.querySelectorAll('.date-container');
+
+    setInterval(() => {
+        containers.forEach(container => {
+            const gregDate = container.querySelector('.Gregorian-date');
+            const hijriDate = container.querySelector('.Hijri-date');
+
+            gregDate.classList.toggle('hidden');
+            hijriDate.classList.toggle('hidden');
+        });
+    }, 60000);
 });
 
 const themeButton = document.querySelector('#theme-btn');
